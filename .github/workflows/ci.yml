@@ -46,7 +46,7 @@ jobs:
       - run: psql -h localhost -U postgres -d iadb -f db/init.sql
         env:
           PGPASSWORD: claveCI
-      - run: pytest -v
+      - run: PYTHONPATH=. pytest -v
 
   construir:
     runs-on: ubuntu-latest
